@@ -1,0 +1,45 @@
+@startuml
+
+class Ship {
+    - shipName : String
+    - yearBuilt : String
+    + getShipName() : String
+    + setShipName(shipName : String) : void
+    + getYearBuilt() : String
+    + setYearBuilt(yearBuilt : String) : void
+    + toString() : String
+    + printShip() : void
+}
+
+class CruiseShip extends Ship {
+    - maxNumberPassengers : int
+    + getMaxNumberPassengers() : int
+    + setMaxNumberPassengers(maxNumberPassengers : int) : void
+    + toString() : String
+}
+
+class CargoShip extends Ship {
+    - cargoCapacityInTonnage : int
+    + getCargoCapacityInTonnage() : int
+    + setCargoCapacityInTonnage(cargoCapacityInTonnage : int) : void
+    + toString() : String
+}
+
+object "<u>Titanic:Ship</u>" as ts {
+    shipName = "Titanic"
+    yearBuilt = "March 31st, 1909"
+}
+
+object "<u>MVGemini:CruiseShip</u>" as mg {
+    shipName = "MVGemini"
+    yearBuilt = "May 30th, 1991"
+    maxNumberPassengers = 100
+}
+
+object "<u>EverGiven:CargoShip</u>" as eg {
+    shipName = "EverGiven"
+    yearBuilt = "September 25th, 2018"
+    cargoCapacityInTonnage = 220940
+}
+
+@enduml

@@ -1,0 +1,80 @@
+@startuml
+
+class File {
+    - String name
+    + File(String name)
+    + String getName()
+    + void setName(String name)
+    + String toString()
+}
+
+class Folder {
+    - String name
+    - ArrayList<Folder> subfolders
+    - ArrayList<File> files
+    + Folder()
+    + String getName()
+    + void setName(String name)
+    + void removeSubfolder(String subFolderName)
+    + void addSubfolder(String subFolderName)
+    + Folder getSubfolder(String subFolderName)
+    + boolean removeFile(File file)
+    + void addFile(String fileName)
+    + String toString()
+    + void printFolderContents()
+}
+
+Folder "*" --|> Folder : subfolders
+Folder "*" --> File : files
+
+object "<u>phpDemo1:Folder</u>" as php1 {
+    name = "php_demo1"
+}
+
+object "<u>sourceFiles:Folder</u>" as sf {
+    name = "Source Files"
+}
+
+object "<u>includePath:Folder</u>" as ip {
+    name = "Include Path"
+}
+
+object "<u>remoteFiles:Folder</u>" as rf {
+    name = "Remote Files"
+}
+
+object "<u>.phalcon:Folder</u>" as ph {
+    name = ".phalcon"
+}
+
+object "<u>cache:Folder</u>" as ca {
+    name = "cache"
+}
+
+object "<u>public:Folder</u>" as pub {
+    name = "public"
+}
+
+object "<u>.htaccess:File</u>" as ht {
+    name = ".htaccess"
+}
+
+object "<u>.htrouter.php:File</u>" as hr {
+    name = ".htrouter.php"
+}
+
+object "<u>index.html:File</u>" as ih {
+    name = "index.html"
+}
+
+php1 -- sf
+php1 -- ip
+php1 -- rf
+sf -- ph
+sf -- ca
+sf -- pub
+pub -- ht
+pub -- hr
+pub -- ih
+
+@enduml
