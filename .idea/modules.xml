@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/CS5800_HW3.iml" filepath="$PROJECT_DIR$/CS5800_HW3.iml" />
+
+>>>>>>> ca72954353f68a92d903544f59baac7bb625e85e
     </modules>
   </component>
 </project>
